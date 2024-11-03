@@ -9,11 +9,11 @@ const app = express();
 app.use(responseTime());
 
 const username = '';
-const pword = '';
+const password = '';
 const redisHost = '';
 const redisPort = 0;
 
-const redisClient = redis.createClient({ url: `rediss://${username}:${pword}@${redisHost}:${redisPort}` });
+const redisClient = redis.createClient({ url: `rediss://${username}:${password}@${redisHost}:${redisPort}` });
 redisClient.on('error', err => console.log('Redis Client Error', err));
 
 app.get('/with-redis', async (req, res) => {
